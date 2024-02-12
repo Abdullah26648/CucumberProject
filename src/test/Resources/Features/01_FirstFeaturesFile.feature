@@ -23,7 +23,7 @@ Feature: Login Test
     Then user validates error message
     And user closes browser
 
-  @EmptyCredentials
+  @EmptyCredentials @Smoke
   Scenario: Negative Login With Empty Credentials
     When user clicks on submit button
     Then user validates error message

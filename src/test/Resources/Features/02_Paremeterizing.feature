@@ -4,7 +4,7 @@ Feature: Parameterizing Feature
   Background: User goes to homepage
     Given user goes to homepage
 
-  @PositiveLoginParam
+  @PositiveLoginParam @Smoke
   Scenario: Positive Login
     When user enters username "clarusway@hotmail.com"
     And user enters password "Clarusway.123"

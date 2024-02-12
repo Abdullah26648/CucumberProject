@@ -17,9 +17,9 @@ import org.junit.runner.RunWith;
 
         features = "src/test/Resources/Features",
         glue = "StepDefinitions",
-        tags = "@FailedScenario",
+        tags = "@Smoke",
         dryRun = false
 )
-public class Runner {
+public class SmokeTestRunner {
 
 }

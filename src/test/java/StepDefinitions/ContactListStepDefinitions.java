@@ -43,13 +43,6 @@ public class ContactListStepDefinitions {
         assertTrue(contactListContactPage.logout.isDisplayed());
     }
 
-    @And("user closes browser")
-    public void userClosesBrowser() {
-
-        Driver.closeDriver();
-
-    }
-
     @Then("user validates error message")
     public void userValidatesErrorMessage() throws InterruptedException {
         Thread.sleep(500);
