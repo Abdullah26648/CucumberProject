@@ -19,6 +19,6 @@ public class ToDoListStepDefinitions {
             toDoListPage.input.sendKeys(w + Keys.ENTER);
         }
 
-        throw new RuntimeException();
     }
+
 }

@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {
                 "pretty",//Scenario steplerini konsola renkli yazdırır
                 "html:target/reports/html-reports/default-cucumber-reports.html",
-                "rerun:target/failedScenarios.txt"
+                "rerun:target/failedScenarios.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" //Spark peport için
         },
         features = "@target/failedScenarios.txt",
         glue = "StepDefinitions"
