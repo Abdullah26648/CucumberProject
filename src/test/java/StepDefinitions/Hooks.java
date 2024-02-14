@@ -20,9 +20,9 @@ public class Hooks {
     }
 
     @After//import io.cucumber.java.After;
-    public void tearDown(Scenario scenario){
+    public void tearDown(Scenario scenario) {
         System.out.println("Hooks Class @After Methodu");
-        if (scenario.isFailed()){
+        if (scenario.isFailed()) {
 
             System.out.println("Senaryo başarısız oldu");
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -30,9 +30,10 @@ public class Hooks {
             System.out.println("Başarısız senaryo için ekran görüntüsü alındı: " + scenario.getName());
             // Tarayıcıda rapor açıldığında ekli olan resme tıklayarak ekran görüntüsünü görebilirsiniz.
 
-            Driver.getDriver().quit();
-
         }
+
+        try {Thread.sleep(3000);} catch (InterruptedException ignore) {}
+        Driver.getDriver().quit();
 
     }
 

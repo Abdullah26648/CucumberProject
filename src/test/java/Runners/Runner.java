@@ -17,9 +17,9 @@ import org.junit.runner.RunWith;
 
         },
         monochrome = false,//Daha düzenli log işlemi için
-        features = "src/test/resources/features",//Feature dosyalarının yolu buraya belirtilmelidir
-        glue = "stepdefinitions",//Çalıştırılacak Java classlarının yolu buraya belirtilmelidir
-        tags = "@Parallel",//Özel olarak çalıştırılacak Scenario yada Feature Tag'i buraya belirtilir
+        features = "src/test/Resources/Features",//Feature dosyalarının yolu buraya belirtilmelidir
+        glue = "StepDefinitions",//Çalıştırılacak Java classlarının yolu buraya belirtilmelidir
+        tags = "@Excel",//Özel olarak çalıştırılacak Scenario yada Feature Tag'i buraya belirtilir
         dryRun = false//dryRun = true --> Testi çalıştırmaz, eksik step definitionları tespit eder.
 )
 public class Runner {
