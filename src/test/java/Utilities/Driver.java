@@ -42,7 +42,7 @@ public class Driver {
 
         }
 
-        driver.manage().window().maximize();
+        try {driver.manage().window().maximize();} catch (Exception e) {}
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         return driver;

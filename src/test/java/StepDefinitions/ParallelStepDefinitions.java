@@ -2,11 +2,14 @@ package StepDefinitions;
 
 import Pages.FormHomeParallelPage;
 import Utilities.ConfigReader;
+import Utilities.Driver;
 import Utilities.ParallelDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -66,4 +69,28 @@ public class ParallelStepDefinitions {
         ParallelDriver.getDriver().get(url);
 
     }
+
+    @When("user enters username ,user enters password ,user enters comment")
+    public void userEntersUsernameUserEntersPasswordUserEntersComment(io.cucumber.datatable.DataTable dataTable) {
+
+        List<List<String>> rows = dataTable.asLists();
+
+
+        for (List<String> w : rows) {
+            String username = w.get(0);
+            String password = w.get(1);
+            String comment = w.get(2);
+
+            formHomePage.username.sendKeys(username);
+            formHomePage.password.sendKeys(password);
+            formHomePage.comments.clear();
+            formHomePage.comments.sendKeys(comment);
+
+            try {Thread.sleep(1000);} catch (InterruptedException e) {}
+            ParallelDriver.getDriver().navigate().refresh();
+        }
+
+        ParallelDriver.closeDriver();
+    }
+
 }

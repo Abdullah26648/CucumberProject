@@ -1,26 +1,25 @@
 package Pages;
 
+import Utilities.Driver;
 import Utilities.ParallelDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FormHomePage {
-
-    public FormHomePage(){
+public class ContactListHomeParallelPage {
+    public ContactListHomeParallelPage(){
         PageFactory.initElements(ParallelDriver.getDriver(), this);
     }
 
-    @FindBy(name = "username")
+    @FindBy(id = "email")
     public WebElement username;
 
-    @FindBy(name = "password")
+    @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy(name = "comments")
-    public WebElement comments;
-
-    @FindBy(xpath = "//input[@type='submit']")
+    @FindBy(id = "submit")
     public WebElement submit;
 
+    @FindBy(id = "error")
+    public WebElement error;
 }
